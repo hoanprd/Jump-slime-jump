@@ -19,7 +19,7 @@ public class CrossbarIns : MonoBehaviour
     {
         InsTimeCur -= Time.deltaTime;
 
-        if (InsTimeCur <= 0)
+        if (InsTimeCur <= 0 && GameController.dead == false)
         {
             InsTimeCur = InsTimeOri;
             CrossIns();

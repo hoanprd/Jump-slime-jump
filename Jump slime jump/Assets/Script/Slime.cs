@@ -25,7 +25,16 @@ public class Slime : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crossbar"))
         {
-            transform.position = transform.position + new Vector3(0, 1f, 0);
+            transform.position = transform.position + new Vector3(0, Time.deltaTime * 70f, 0);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DeadZone"))
+        {
+            GameController.dead = true;
+            Destroy(gameObject);
         }
     }
 }
