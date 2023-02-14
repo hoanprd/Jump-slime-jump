@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4473838645106235947}
   m_Layer: 0
   m_Name: Corssbar
-  m_TagString: Untagged
+  m_TagString: Crossbar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
