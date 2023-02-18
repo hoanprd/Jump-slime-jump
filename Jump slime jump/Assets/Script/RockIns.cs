@@ -11,7 +11,7 @@ public class RockIns : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        InsTimeCur = InsTimeOri;
     }
 
     // Update is called once per frame

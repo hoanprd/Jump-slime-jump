@@ -46,5 +46,10 @@ public class Slime : MonoBehaviour
             GameController.dead = true;
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Bird"))
+        {
+            GameController.dead = true;
+            Destroy(gameObject);
+        }
     }
 }
