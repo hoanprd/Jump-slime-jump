@@ -27,11 +27,21 @@ public class Slime : MonoBehaviour
         {
             transform.position = transform.position + new Vector3(0, Time.deltaTime * 70f, 0);
         }
+        /*if (collision.gameObject.CompareTag("Rock"))
+        {
+            GameController.dead = true;
+            Destroy(gameObject);
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DeadZone"))
+        {
+            GameController.dead = true;
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Rock"))
         {
             GameController.dead = true;
             Destroy(gameObject);
