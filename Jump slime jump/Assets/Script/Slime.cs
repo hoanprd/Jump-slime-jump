@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
+    public Animator SlimeAni;
+
     public float move_speed;
     float x;
     bool moveL, moveR;
@@ -30,7 +32,7 @@ public class Slime : MonoBehaviour
             x = 0;
         }
 
-        //x = Input.GetAxisRaw("Horizontal");
+        x = Input.GetAxisRaw("Horizontal");
         float move_step = move_speed * x * Time.deltaTime;
         transform.position = transform.position + new Vector3(move_step, 0 - Time.deltaTime, 0);
     }
@@ -39,6 +41,7 @@ public class Slime : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crossbar"))
         {
+            SlimeAni.SetTrigger("ChangeShape");
             transform.position = transform.position + new Vector3(0, Time.deltaTime * 70f, 0);
         }
     }
