@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class Crossbar : MonoBehaviour
 {
+    public GameObject Coin;
+    public int CoinRand;
     public float move_speed;
+
+    void Start()
+    {
+        CoinRand = Random.Range(1, 11);
+
+        if (CoinRand == 1 || CoinRand == 2 || CoinRand == 3 || CoinRand == 4)
+        {
+            Coin.SetActive(true);
+        }
+    }
 
     // Update is called once per frame
     void Update()
