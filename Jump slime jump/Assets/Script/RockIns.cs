@@ -5,6 +5,7 @@ using UnityEngine;
 public class RockIns : MonoBehaviour
 {
     public GameObject Rock;
+    public AudioSource RockFallSound;
 
     public float InsTimeOri, InsTimeCur;
 
@@ -21,6 +22,7 @@ public class RockIns : MonoBehaviour
 
         if (InsTimeCur <= 0 && GameController.dead == false)
         {
+            RockFallSound.Play();
             InsTimeCur = InsTimeOri;
             RockI();
         }

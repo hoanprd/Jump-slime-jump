@@ -5,6 +5,7 @@ using UnityEngine;
 public class Slime : MonoBehaviour
 {
     public Animator SlimeAni;
+    public AudioSource SlimeJumpSound;
 
     public float move_speed;
     float x;
@@ -34,13 +35,14 @@ public class Slime : MonoBehaviour
 
         x = Input.GetAxisRaw("Horizontal");
         float move_step = move_speed * x * Time.deltaTime;
-        transform.position = transform.position + new Vector3(move_step, 0 - Time.deltaTime, 0);
+        transform.position = transform.position + new Vector3(move_step, -Time.deltaTime, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Crossbar"))
         {
+            SlimeJumpSound.Play();
             SlimeAni.SetTrigger("ChangeShape");
             transform.position = transform.position + new Vector3(0, Time.deltaTime * 70f, 0);
         }
