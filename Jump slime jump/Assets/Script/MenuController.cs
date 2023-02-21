@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public Text HighScoreText;
+    public GameObject SettingPanel;
 
     public static int HighScore;
 
@@ -37,6 +38,16 @@ public class MenuController : MonoBehaviour
         ScoreController.Score = 0;
 
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void OpenSettingPanel()
+    {
+        SettingPanel.SetActive(true);
+    }
+
+    public void CloseSettingPanel()
+    {
+        SettingPanel.SetActive(false);
     }
 
     public void ExitButton()
