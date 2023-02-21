@@ -17,11 +17,16 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (dead == true)
         {
             GameOverPanel.SetActive(true);
+
+            if (ScoreController.Score > MenuController.HighScore)
+            {
+                PlayerPrefs.SetInt("SHighScore", ScoreController.Score);
+            }
 
             EndTime -= Time.deltaTime;
         }
